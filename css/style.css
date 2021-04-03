@@ -124,15 +124,29 @@ blockquote cite:before {
 
 .hidden {
     display: none;
-
+}
+.hide-visually {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
 }
 
 /* IMAGES */
 img {
     max-width: 100%;
-    height: auto;
 }
 
+/* Video */
+.video-iframe {
+    /* max-width: 80%;
+    height: auto; */
+    position: absolute;
+}
+@media (max-width:767px) {
+    .video-iframe {
+        max-width: 80%;
+    }
+}
 /* BUTTONS */
 .button, button {
     font-size: inherit;
@@ -196,9 +210,6 @@ body {margin: 0;}
     .container {
         max-width: 1200px;
     }
-    .branch-one {
-        position: sticky;
-    }
 }
 
 /*  FOR DEMO PURPOSES */
@@ -250,6 +261,10 @@ body.demo::before {
     justify-content: space-between;
     margin-left: -2%;
     margin-right: -2%;
+}
+
+.row.v-centered {
+    align-items: center;
 }
 
 .row > .column {
@@ -383,6 +398,7 @@ body.demo::before {
 /*  SECTIONS */
 
 section {
+    position: relative;
     padding: 5em 0;
 }
 
@@ -498,13 +514,10 @@ h3.venue {
     margin-top: 1.6em;
 }
 
-iframe {
-    position: absolute;
-}
 
 .video-background {
     height: 315px;
-    width: 560px;
+    max-width: 560px;
     outline: 2px solid rgba(169, 83, 168, 1);
     margin-left: 60px;
     margin-top: 75px;
@@ -515,7 +528,8 @@ iframe {
     margin-left: 3em;
     margin-bottom: 5em;
     height: 315px;
-    width: 560px;
+    width: 80%;
+    max-width: 560px;
     background-color: rgba(255, 255, 255, .8);
 }
 
@@ -528,7 +542,7 @@ iframe {
 
 .musings-background {
     height: 315px;
-    width: 560px;
+    max-width: 560px;
     border-top: 2px solid rgba(169, 83, 168, 1);
     border-left: 2px solid rgba(169, 83, 168, 1);
     transform: translate(0, -3em);
@@ -540,16 +554,43 @@ iframe {
 
 /*  BRANCH STYLING */
 
+
+    .branch {
+        /* background: red; */
+        /* border: 1px solid red; */
+    }
+
     .branch-one {
-        transform: translate(-48em, 12em);
+        /* transform: translate(-48em, 12em); */
+        background-image: url('../img/branch-one.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left top;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 35%;
+        height: 50%;
+        z-index: -1;
     }
 
     .branch-two {
-        transform: translate(18em, -8em);
+        /* transform: translate(18em, -8em); */
+        background-image: url('../img/branch-two.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 75%;
+        max-width: 1500px;
+        height: 50%;
+        z-index: -1;
     }
 
     .branch-eight {
-       transform: translate(-28.5em, 26em);
+       /* transform: translate(-28.5em, 26em); */
     }
 
     h1, h2, h3 {
@@ -559,13 +600,11 @@ iframe {
     }
 
     h2.story {
-       
-        transform: translate(0, 3em);
+        /* transform: translate(0, 3em); */
     }
 
     p.story {
-     
-        margin-top: 7em;
+        /* margin-top: 7em; */
     }
 
     h2.next {
@@ -578,6 +617,7 @@ iframe {
 @media (max-width: 767px) {
     .toggle-nav .site-id {
         position: absolute;
+        max-width: 150px;
         }
 
     .toggle-nav .site-nav {
