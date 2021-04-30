@@ -448,7 +448,10 @@ li {
 
   .star span {
       display: none;
-      margin-right: 5em;
+      position: absolute;
+      top: .5em;
+      left: 50%;
+      transform: translateX(-50%);
   }
 
   .star:hover span {
@@ -456,7 +459,6 @@ li {
       font-size: 10px;
       font-family: novecento-sans-wide,sans-serif;
       font-weight: lighter;
-      padding-right: 5em;
       }
 
   .star .star-about {
