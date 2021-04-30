@@ -1,191 +1,170 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>PAGE</title>    
+        <meta name="description" content="Sitebase: a minimalistic HTML + CSS + JS base front-end framework for simple website projects" />
 
-<head>
-    <meta charset="utf-8" />
-    <title>Site Name | PAGE</title>
-    <meta name="description"
-        content="Sitebase: a minimalistic HTML + CSS + JS base front-end framework for simple website projects" />
+        <!-- FOR MOBILE / SMALL SCREENS -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- FOR MOBILE / SMALL SCREENS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- FOR IE/EDGE -->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <!-- FOR IE/EDGE -->
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <!-- MAIN CSS STYLES -->
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
 
-    <!-- MAIN CSS STYLES -->
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <!-- FONT AWESOME -->
 
-    <!-- FONT AWESOME -->
+        <script src="https://kit.fontawesome.com/32613632b2.js" crossorigin="anonymous"></script>
 
-    <script src="https://kit.fontawesome.com/32613632b2.js" crossorigin="anonymous"></script>
+        <!-- ADOBE FONTS -->
+        <link rel="stylesheet" href="https://use.typekit.net/tll0wxm.css">
 
-    <!-- GOOGLE FONTS -->
-    <link rel="stylesheet" href="https://use.typekit.net/tll0wxm.css">
+    </head>
 
-</head>
+    <body id="top">
 
-<body id="top">
-
-    <header class="site-header toggle-nav sticky" data-navstate="closed">
-        <div class="container">
-            <div class="site-id">
-                <h1>
-                    <a class="scroll" href="#top">
+        <header class="site-header toggle-nav" data-navstate="closed">
+            <div class="container">
+                <div class="site-id">
+                    <h1><a class="scroll" href="#top">
                         <img src="img/pageicon.png" class="page-site-id" alt="Page Logo" />
-                        <span class="hide-visually">Page</span>
-                    </a>
-                </h1>
+                        <span class="hide-visually">
+                            Page
+                        </span>
+                        </a>
+                    </h1>
+                </div>
+                <nav class="site-nav">
+                    <div class="menu-button navicon">Menu</div>
+                    <ul>
+                       
+                        <li id="star-about"><a class="scroll star" href="#about"><div class="star-about" alt="About Star"><span>about</span></div></a></li>
+                        <li id="star-performance"><a class="scroll star" href="#next-performance"><div class="star-performance" alt="Performance Star"><span>performance</span></div></a></li>
+                        <li id="star-media"><a class="scroll star" href="#media"><div class="star-media" alt="Media Star"><span>media</span></div></a></li>
+                        <li id="star-merch" ><a class="scroll star" href="#merch"><div class="star-merch" alt="Merch Star"><span>merch</span></div></a></li>
+                        <li id="star-blog"><a class="scroll star" href="#blog"><div class="star-blog" alt="Blog Star"><span>blog</span></div></a></li>
+                        <li id="star-social"><a class="scroll star" href="#social"><div class="star-social" alt="Social Star"><span>social</span></div></a></li>
+                        <li>
+                            <audio src="audio/matcha.mp3"></audio>
+                            <button id="button">
+                                <i class="fas fa-volume-up fa-2x"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="site-nav">
-                <div class="menu-button navicon">Menu</div>
-                <ul>
-                    <li class="hidden"><a class="scroll" href="#top">Home</a></li>
-                    <li><a class="scroll" href="#about">About</a></li>
-                    <li><a class="scroll" href="#next-performance">Performance</a></li>
-                    <li><a class="scroll" href="#media">Media</a></li>
-                    <li><a class="scroll" href="#merch">Merch</a></li>
-                    <li><a class="scroll" href="#blog">Blog</a></li>
-                    <li><a class="scroll" href="#social">Social</a></li>
-                    <li>
-                        <audio controls loop id="pagesong">
-                            <source src="audio/inflight.mp3">
-                        </audio>
-                        <script>
-                            var audio = document.getElementById("pagesong");
-                            audio.volume = .1;
-                        </script>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        </header>
 
-    <main class="site-main">
+        <main class="site-main">
 
-        <section class="hero">
-            <h1>I HAVE LOVED THE STARS TOO FONDLY</h1>
-            <h1>TO BE FEARFUL OF THE NIGHT</h1>
-        </section>
-
-        <section id="about">
-            <div class="container">
-                <div class="row v-centered">
-                    <div class="column one-half">
-                        <img src="img/group_photo.gif" class="group-photo" alt="Page Group Photo" />
-                    </div>
-                    <div class="column one-half">
-                        <h2 class="story">The Story So Far</h2>
-                        <p class="story">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni tempora aliquid
-                            recusandae sequi atque nulla veniam cumque labore laudantium iure. Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. Magni tempora aliquid recusandae sequi atque nulla veniam
-                            cumque labore laudantium iure.</p>
+           <section class="hero">
+                    <h1 class="glow">we&#39;ve been written for the stars</h1> 
+                </section>
+                
+                <section id="about">
+                     <div class="container">
+                        <div class="row v-centered">
+                        <div class="column one-half">
+                            <img src="img/group_photo.gif" class="group-photo" alt="Page Group Photo" />
+                        </div>
+                        <div class="column one-half">
+                            <h2 class="story">we are page</h2>
+                            <p class="story">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni tempora aliquid recusandae sequi atque nulla veniam cumque labore laudantium iure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni tempora aliquid recusandae sequi atque nulla veniam cumque labore laudantium iure.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="branch branch-one"></div>
-            <div class="branch branch-two"></div>
-        </section>
+                <div class="branch branch-one"></div>
+                <div class="branch branch-two"></div>
+            </section>
 
-        <section id="next-performance">
-            <div class="container">
-                <div class="row">
-                    <div class="column one-half">
-                        <h2 class="next-show">Next Performance</h2>
-                    </div>
-                    <div class="column one-half">
-                        <h1 class="date">4.6.21</h1>
-                        <div class="rectangle"></div>
-                        <h3 class="venue">Hawaii State Art Museum</h3>
-                        <div class="background-one"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="branch branch-three">branch 3</div>
-            <div class="branch branch-four">branch 4</div>
-        </section>
+            <section id="next-performance">
+                <div class="container">
+                   <div class="row">
+                   <div class="column one-half">
+                    <h2 class="next-show">next performance</h2>
+                   </div>
+                   <div class="column one-half">
+                       <h1 class="date">9.20.21</h1>
+                   </div>
+               </div>
+           </div>
+           <div class="branch branch-three"></div>
+           <div class="branch branch-four"></div>
+       </section>
 
-        <section id="media">
-            <div class="container">
-                <div class="row">
-                    <div class="column two-thirds">
-                        <h2>Media</h2>
-                        <iframe class="video-iframe" width="560" height="315"
-                            src="https://www.youtube.com/embed/voBEjAhNoYs?controls=0&amp;start=385&mute=1&autoplay=1"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                        <div class="video-background"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="branch branch-five">branch 5</div>
-        </section>
+       <section id="media">
+           <div class="container">
+               <div class="row">
+                   <div class="column two-thirds">
+                       <h2>media</h2>
+                       <iframe width="560" height="315" class="video-iframe" src="https://www.youtube.com/embed/7mBBSMiToDI?controls=0&amp;start=5&mute=1&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      <div class="video-background"></div>
+                   </div>
+               </div>
+           </div>
+           <div class="branch branch-five"></div>
+       </section>
 
-        <section id="merch">
-            <div class="container">
-                <div class="row">
-                    <div class="column one-half">
-                        <h2 class="merch">Buy Our Stuff</h2>
-                    </div>
-                    <div class="column one-half">
-                        <a href="https://www.blankcanvascustom.com/" target="_blank" rel="noopener noreferrer"><img
-                                src="img/Blank Canvas.png" class="bc-logo" alt="Blank Canvas Logo" /></a>
-                    </div>
-                </div>
-            </div>
-            <div class="branch branch-six"> branch 6</div>
-        </section>
-
-        <section id="blog">
-            <div class="container">
-                <div class="row">
-                    <div class="column two-thirds">
-                        <h2 class="musings-header">Musings</h2>
-                        <div class="musings"></div>
-                        <div class="musings-background"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="brnach branch-seven">branch 7</div>
-        </section>
-
-    </main>
-    <section id="social">
+       <section id="merch">
         <div class="container">
-            <div class="row">
-                <div class="column two-thirds centered">
-                    <h1 class="hero-bottom"><a class="scroll" href="#top"><img src="img/pageicon.png"
-                                alt="Page Hero Icon"></a></h1>
-                </div>
+           <div class="row">
+           <div class="column one-half">
+               <h2 class="merch">buy our stuff</h2>
+           </div>
+           <div class="column one-half">
+               <a href="https://www.blankcanvascustom.com/" target="_blank" rel="noopener noreferrer"><img src="img/Blank Canvas.png" class="bc-logo" alt="Blank Canvas Logo" /></a>
+           </div>
+       </div>
+   </div>
+   <div class="branch branch-six"></div>
+</section>
+
+<section id="blog">
+    <div class="container">
+        <div class="row">
+            <div class="column two-thirds">
+                <h2 class="musings-header">musings</h2>
+                <div class="musings"></div>
             </div>
         </div>
-        <div class="brnach branch-eight">branch 8</div>
-    </section>
+    </div>
+    <div class="branch branch-seven"></div>
+</section>
 
+        </main>
+        <section id="social">
+                <div class="container">
+                    <div class="row">
+                        <div class="column two-thirds centered">
+                        <h1 class="hero-bottom"><a class="scroll" href="#top"><img src="img/pageicon.png" alt="Page Hero Icon"></a></h1>
+                    </div>
+                </div>
+                </div>
+                <div class="branch branch-eight"></div>
 
-    <footer class="site-footer">
-        <nav class="site-nav">
-            <ul>
-                <li><a href="https://www.instagram.com/pagehnl/" target="_blank" rel="noopener noreferrer"><i
-                            class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="https://pagehawaii.bandcamp.com/?fbclid=IwAR3nJJyCbUAbsH9i7f1VlCmkUrxrl1H35YywstwQpPWcAcBaU5kFwOCYhmk"
-                        target="_blank" rel="noopener noreferrer"><i class="fab fa-bandcamp"></i></a></li>
-            </ul>
-        </nav>
+                
+        <footer class="site-footer">
+                <nav class="site-nav">
+                    <ul>
+                        <li><a href="https://www.instagram.com/pagehnl/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="https://pagehawaii.bandcamp.com/?fbclid=IwAR3nJJyCbUAbsH9i7f1VlCmkUrxrl1H35YywstwQpPWcAcBaU5kFwOCYhmk" target="_blank" rel="noopener noreferrer"><i class="fab fa-bandcamp"></i></a></li>
+                    </ul>
+                    </nav>
+            
+        </footer>
+        </section>
 
-    </footer>
-
-
-
-
-    <!-- SCROLL JS-->
-    <script src="js/scroll.js"></script>
-
-    <!-- MAIN JS FILE -->
-    <script src="js/script.js"></script>
-
-</body>
-
+      
+ 
+        
+            <!-- SCROLL JS-->
+            <script src="js/scroll.js"></script>
+        
+            <!-- MAIN JS FILE -->
+        <script src="js/script.js"></script>
+        
+    </body>
 </html>

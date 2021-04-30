@@ -13,7 +13,7 @@ menubutton.addEventListener('click', function () {
 
 });
 
-   //STICKY NAV - CLOSE THE NAV ON STICKY HEADER NAV LINK CLICKS
+   // STICKY NAV - CLOSE THE NAV ON STICKY HEADER NAV LINK CLICKS 
    const stickynavlinks = document.querySelectorAll(".sticky nav a");
    for (var i = 0; i < stickynavlinks.length; i++) {
        stickynavlinks[i].addEventListener('click', function () {
@@ -22,3 +22,22 @@ menubutton.addEventListener('click', function () {
    };
 
 });
+
+// AUDIO PLAYER
+const button = document.querySelector("#button");
+const icon = document.querySelector("#button > i");
+const audio = document.querySelector("audio");
+button.addEventListener("click", () => {
+    if (audio.paused) {
+        audio.volume = 0.2;
+        audio.play();
+        icon.classList.remove('fa-volume-up');
+        icon.classList.add('fa-volume-mute');
+    } else {
+        audio.pause();
+        icon.classList.remove('fa-volume-mute');
+        icon.classList.add('fa-volume-up');
+    }
+    button.classList.add("fade");
+});
+

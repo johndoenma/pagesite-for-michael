@@ -35,8 +35,12 @@ body {
     font-size: 100%;  /* 16px */
     font-family: Helvetica, Arial, sans-serif;
     line-height: 1.5;
+    background-color: rgba( 0, 0, 0, 1);
     color: rgba(255, 255, 255, .8);
-    background-color: rgba(0, 0, 0, .95);
+    background-image: url(https://res.cloudinary.com/dj5cme0nj/image/upload/c_scale,w_1920/v1619728365/night_background_2_uyduoo.webp);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
 }
 
 /*  HEADINGS */
@@ -122,59 +126,37 @@ blockquote cite:before {
     max-width: none;
 }
 
-.hidden {
-    display: none;
-}
 .hide-visually {
     position: absolute;
     top: -9999px;
     left: -9999px;
 }
 
-/* IMAGES */
+/* RESPONSIVE IMAGES */
 img {
     max-width: 100%;
+    height: auto;
 }
 
-/* Video */
-.video-iframe {
-    /* max-width: 80%;
-    height: auto; */
-    position: absolute;
-}
-@media (max-width:767px) {
-    .video-iframe {
-        max-width: 80%;
-    }
-}
 /* BUTTONS */
-.button, button {
-    font-size: inherit;
-    line-height: 1;
-    /* background-color: rgba(255, 0, 221, 1);
-    border: 1px solid rgba(255, 0, 221, 1); */
-    color: seashell;
-    padding: 1em;
-    display: inline-block;
-    margin: .5em .5em .5em 0;
-    text-align: center;
-    border-radius: .5em;
-}
-.button:hover, button:hover {
-    /* background-color: rgba(255, 0, 221, .6);
-    border-color: rgba(255, 0, 221, .6); */
-    color: rgba(0, 0, 0, .8);
-    text-decoration: none;
-    transition: 250ms ease;
-}
-.button.alternate {
+
+button {
     background-color: transparent;
-    /* color: rgba(255, 0, 221, 1); */
-}
-.button.alternate:hover {
-    /* background-color: rgba(255, 0, 221, .6); */
-    color: rgba(0, 0, 0, .8);
-}
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    opacity: .8;
+    margin-top: .7em;
+    transition: 250ms ease;
+    }
+
+    button:hover {
+        cursor: pointer;
+        color: rgba(169, 83, 168, 1);
+        transition: 250ms ease;
+        opacity: 1;
+    }
 
 /*  BASE LAYOUT */
 
@@ -307,15 +289,19 @@ body.demo::before {
 
 /*  SITE HEADER */
 
+
+
 .site-header {
     padding: .5em 0;
-    background-color: rgba(25, 25, 25, 1);
-    
+    background-color: transparent;
+    position: relative;
+
 }
 
 
 
 /*  ON LARGER SCREENS PLACE LOGO LEFT AND NAV RIGHT */
+
 @media (min-width: 768px) {
     .site-header .container {
         display: flex;
@@ -325,30 +311,44 @@ body.demo::before {
 
 /*  STYLING FOR BOTH HEADER AND FOOTER */
 
+audio {
+    display: none;
+}
+
+
+
+
 .site-header a,
 .site-footer a {
     color: rgba(255, 255, 255, .8);
     padding: 0;
     transition: 300ms ease;
 }
-
-.site-header a:hover, 
+ 
 .site-footer a:hover {
     color: rgba(255, 255, 255, .5);
     text-decoration: none;
     transform: translateY(-.1em)
 }
 
-
+i {
+    opacity: .9;
+}
 
 /*  LOGO AREA */
 
 .site-id h1 {
-    font-size: 1.5em;
+    font-size: 1em;
     margin: 0;
     text-align: center;
-    transform: scale(.5);
 }
+
+.site-id h1 img {
+    /* background: red; */
+    width: 100px;
+    margin-top: .8em;
+}
+
 
 
 /*  SITE NAV */
@@ -371,6 +371,158 @@ body.demo::before {
     display: block;
 }
 
+/*  STARS */
+
+li {
+    z-index: 1;
+}
+
+#star-about {
+    position: absolute;
+    top: 250%;
+    left: 10%;
+}
+
+#star-performance {
+    position: absolute;
+    top: 700%;
+    left: 15%;
+}
+
+#star-media {
+    position: absolute;
+    top: 900%;
+    left: 35%;
+}
+
+#star-merch {
+    position: absolute;
+    top: 800%;
+    left: 70%;
+}
+
+#star-blog {
+    position: absolute;
+    top: 300%;
+    left: 55%;
+}
+
+#star-social {
+    position: absolute;
+    top: 400%;
+    left: 80%;
+}
+
+@keyframes glow {
+    from {
+      box-shadow: 0 0 10px 0px rgba(169, 83, 168, 1);
+    }
+    to {
+      box-shadow: 0 0 10px 15px rgba(187, 255, 255, 0.5);
+    }
+  }
+
+  .site-header li a {
+    text-decoration: none;
+}
+
+
+.star {
+    padding: 2em
+}
+
+  .star div {
+      animation: glow 3s infinite alternate;
+      height: 5px;
+      width: 5px;
+      background-color: rgba(255, 255, 255, .7);
+      border: 1px solid transparent;
+      border-radius: 50%;
+      transition: 500ms ease;
+  }
+
+  .star:hover div {
+      transform: scale(3);
+      transition: 500ms ease;
+  }
+
+  .star span {
+      display: none;
+      margin-right: 5em;
+  }
+
+  .star:hover span {
+      display: block;
+      font-size: 10px;
+      font-family: novecento-sans-wide,sans-serif;
+      font-weight: lighter;
+      padding-right: 5em;
+      }
+
+  .star .star-about {
+      animation-delay: 0;
+  }
+
+  .star .star-performance {
+    animation-delay: 3s;
+    }
+
+.star .star-media {
+   animation-delay: 5s;
+   }
+
+.star .star-merch {
+    animation-delay: 1s;
+ }
+
+.star .star-blog {
+    animation-delay: 2s;
+}
+
+.star .star-social {
+    animation-delay: 4s;
+ }
+
+
+@media (max-width:767px) {
+    #star-about {
+        top: 150%;
+    }
+    #star-performance {
+        top: 250%;
+        left: 20%;
+    }
+    #star-media {
+        top: 155%;
+        left: 40%;
+    }
+    #star-merch {
+        top: 180%;
+        left: 65%;
+    }
+    #star-blog {
+        top: 80%;
+    }
+    #star-social {
+        top: 250%;
+    }
+    .hero h1 {
+        margin: auto;
+        line-height: auto;
+    }
+    .site-header h1 {
+        max-width: 50%;
+    }
+    button {
+        font-size: .5em;
+        margin-top: 1.5em;
+    }
+
+    .star:hover span {
+        display: none;
+    }
+   
+}
 
 
 /*  SITE MAIN */
@@ -379,92 +531,77 @@ body.demo::before {
 /*  SITE FOOTER */
 
 .hero-bottom  {
-    margin-bottom: 0;
+    margin-bottom: -15px;
 }
 
 
 .site-footer a {
     margin-top: 0em;
-    margin-bottom: 10em;
-    padding: 0em .2em;
+    margin-bottom: 5em;
+    padding: 0em .1em;
     font-size: 3em;
-}
-
-.site-footer {
-    transform: translate(0em, -5em);
 }
 
 
 /*  SECTIONS */
 
 section {
-    position: relative;
     padding: 5em 0;
+    position: relative;
 }
-
 
 /*  HERO */
 
+
+
 .hero  {
-    padding: 6em 4%;
+    padding: 25em 4%;
     text-align: center;
     margin-bottom: 1em;
-    padding: 10em;
-    margin-top: 1em;
+    margin-top: 0;
+
 }
+
+@keyframes transform {
+    from {
+        transform: translateY(-80px);
+    }
+    to {
+        transform: translateY(-150px);
+    }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
+    }
+    
+}
+
+
 
 .hero h1 {
     font-family: novecento-sans-wide,sans-serif;
-    font-weight: 200;
+    font-weight: 100;
     font-style: normal;
-    font-size: 2em;
-    line-height: .8em;
+    font-size: 3em;
+    animation: transform 2.5s ease;
+    animation-fill-mode: forwards;
+    filter: drop-shadow(3px 3px black);
+    
 }
+
+
 
 .hero h1, .hero p {
     margin-left: auto;
     margin-right: auto;
-    max-width: 700px;
+    max-width: 1000px;
     text-align: center;
     color: rgba(255, 255, 255, .8);
 }
 
-.hero .button {
-    background-color: rgba(25, 25, 25, 1);
-    color: rgba(255, 255, 255, .8);
-    border: 1px solid rgba(255, 255, 255, .8);
-}
 
-.hero .button:hover {
-    background-color: transparent;
-    color: rgba(25, 25, 25, 1);
-    border: 1px solid rgba(25, 25, 25, 1);
-    transition: 250ms ease;
-}
-
-.hero .button.alternate {
-    border: 1px solid rgba(25, 25, 25, 1);
-    background-color: transparent;
-    color: rgba(25, 25, 25, 1) ;
-}
-
-.hero .button.alternate:hover {
-    background-color: rgba(25, 25, 25, 1);
-    color: rgba(255, 255, 255, .8);
-    transition: 250ms ease;
-}
-
-.row .button {
-    background-color: transparent;
-    color: rgba(255, 255, 255, .8);
-    border: 1px solid rgba(255, 255, 255, .8)
-}
-
-.row .button:hover {
-    background-color: rgba(255, 255, 255, .8);
-    color: rgba(0, 0, 0, .8);
-    border: 1px solid rgba(0, 0, 0, .8)
-}
 
 /* PHOTO STYING */
 
@@ -473,47 +610,72 @@ section {
     border: 3px solid rgba(169, 83, 168, 1);
     transform: scale(.8);
     padding: 1em;
-    /* margin-left: 3em; */
     }
 
    .next-show {
        text-align: right;
-   }
-
-   h2.merch {
-       text-align: center;
-       padding-bottom: 2em;
-   }
-
-   img.bc-logo {
-       padding-top: 1em;
+       /* border-bottom: 2px solid rgba(169, 83, 168, 1); */
    }
 
    h1.date {
-    position: absolute;
     text-align: center;
-    font-size: 5em;
-    margin-left: 1.25em;
-    margin-top: .7em;
-}
-
-h3.venue {
-    position: absolute;
-    text-align: center;
-    font-size: 2em;
-    margin-top: -2.8em;
-    /* margin-left: .5em; */
+    font-size: 8em;
 }
 
 .rectangle {
-    height: 12em;
+    height: 14em;
     width: 14em;
-    background-color: rgba(169, 83, 168, 1);
+    border: 2px solid rgba(169, 83, 168, 1);
     border-radius: 10%;
     margin-left: 4.5em;
     margin-top: 1.6em;
 }
 
+   h2.merch {
+       text-align: right;
+       margin-left: 1em;
+   }
+
+   img.bc-logo {
+       padding-left: 1em;
+       border-left: 2px solid rgba(169, 83, 168, 1);
+   }
+
+   
+
+/*  VIDEO */
+
+.video-iframe {
+    position: absolute;
+    max-width: 560px;
+}
+
+@media (max-width:767px) {
+    .video-iframe {
+        width: 90%;
+    }
+    .video-background {
+        width: 85%;
+    }
+    h2.merch {
+        text-align: left;
+    }
+    .rectangle {
+        border: none;
+    }
+
+    .next-show {
+        text-align: center;
+        /* border-bottom: 2px solid rgba(169, 83, 168, 1); */
+        margin-bottom: 0;
+    }
+
+    h1.date {
+       text-align: center;
+       font-size: 5em;
+       margin-top: 0;
+    }
+}
 
 .video-background {
     height: 315px;
@@ -524,74 +686,242 @@ h3.venue {
 }
 
 .musings {
-    position: absolute;
-    margin-left: 3em;
     margin-bottom: 5em;
     height: 315px;
     width: 80%;
     max-width: 560px;
-    background-color: rgba(255, 255, 255, .8);
-}
-
-.musings-header {
-    position: relative;
-    text-align: right;
-    margin-bottom: .15em;
-    margin-right: .8em;
-}
-
-.musings-background {
-    height: 315px;
-    max-width: 560px;
-    border-top: 2px solid rgba(169, 83, 168, 1);
-    border-left: 2px solid rgba(169, 83, 168, 1);
-    transform: translate(0, -3em);
+    border: 2px solid rgba(169, 83, 168, 1);
 }
 
 
     /* PAGE ICON STYING */
 
-
-/*  BRANCH STYLING */
-
-
-    .branch {
-        /* background: red; */
-        /* border: 1px solid red; */
-    }
+/*  BRANCH STYLING  */
 
     .branch-one {
-        /* transform: translate(-48em, 12em); */
-        background-image: url('../img/branch-one.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: left top;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 35%;
-        height: 50%;
-        z-index: -1;
+            background-image: url(../img/branch-one.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left;
+            position: absolute;
+           height: 50%;
+            z-index: -1;
+            top: -5%;
+            left: -75%;
+            width: 100%;
+            
     }
 
     .branch-two {
-        /* transform: translate(18em, -8em); */
-        background-image: url('../img/branch-two.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: right bottom;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 75%;
-        max-width: 1500px;
-        height: 50%;
-        z-index: -1;
+            background-image: url(../img/branch-two.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right;
+            position: absolute;
+            height: 50%;
+            max-width: 1500px;
+            z-index: -1;
+            bottom: 20%;
+            right: 0;
+            width: 90%;
+        }
+
+    .branch-three {
+            background-image: url(../img/branch-three.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left top;
+            position: absolute;
+            z-index: -1;
+            top: 57%;
+            left: 0;
+            width: 25%;
+            height: 20%;
+        }
+
+    .branch-four {
+            background-image: url(../img/branch-four.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            position: absolute;
+            right: 0;
+            height: 120%;
+            z-index: -1;
+            margin: auto;
+            width: 22%;
+            bottom: -9%;
+    }
+    
+    .branch-five {
+        background-image: url(../img/branch-five.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom left;
+            position: absolute;
+            left: 0;
+            height: 100%;
+            z-index: -1;
+            bottom: -76%;
+            width: 60%;
+    }
+
+    .branch-six {
+        background-image: url(../img/branch-six.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right center;
+            position: absolute;
+            right: 0;
+            height: 120%;
+            z-index: -1;
+            top: 55%;
+            width: 70%;
+    }
+
+    .branch-seven {
+        background-image: url(../img/branch-seven.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            position: absolute;
+            right: 0;
+            height: 200%;
+            z-index: -1;
+            width: 28%;
+            bottom: -68%;
     }
 
     .branch-eight {
-       /* transform: translate(-28.5em, 26em); */
+        background-image: url(../img/branch-eight.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom left;
+            position: absolute;
+            left: 0;
+            height: 10%;
+            z-index: -1;
+            width: 32%;
+            bottom: 52%;
     }
+
+
+    /* BRANCH STYLING FOR LARGE SCREENS */
+
+    
+ 
+    @media (min-width:1050px) {
+
+        .branch-one {
+            background-image: url(../img/branch-one.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left;
+            position: absolute;
+            top: 0;
+            left: -25%;
+            width: 45%;
+            height: 50%;
+            z-index: -1;
+        }
+    
+        .branch-two {
+            background-image: url(../img/branch-two.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60%;
+            height: 50%;
+            max-width: 1500px;
+            z-index: -1;
+        }
+    
+        .branch-three {
+            background-image: url(../img/branch-three.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left top;
+            position: absolute;
+            top: 20%;
+            left: 0;
+            width: 60%;
+            height: 100%;
+            z-index: -1;
+        }
+    
+        .branch-four {
+            background-image: url(../img/branch-four.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            position: absolute;
+            right: 0;
+            bottom: -60%;
+            width: 30%;
+            height: 120%;
+            z-index: -1;
+            margin: auto;
+        }
+    
+        .branch-five {
+            background-image: url(../img/branch-five.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom left;
+            position: absolute;
+            left: 0;
+            bottom: -45%;
+            width: 40%;
+            height: 100%;
+            z-index: -1;
+        }
+    
+        .branch-six {
+            background-image: url(../img/branch-six.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right center;
+            position: absolute;
+            right: 0;
+            top: 20%;
+            width: 60%;
+            height: 120%;
+            z-index: -1;
+        }
+    
+        .branch-seven {
+            background-image: url(../img/branch-seven.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            position: absolute;
+            right: 0;
+            bottom: -125%;
+            width: 45%;
+            height: 200%;
+            z-index: -1;
+        }
+    
+        .branch-eight {
+            background-image: url(../img/branch-eight.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom left;
+            position: absolute;
+            left: 0;
+            bottom: 35%;
+            width: 50%;
+            height: 100%;
+            z-index: -1;
+            max-width: 60%;
+        }
+    }
+
+
+
 
     h1, h2, h3 {
         font-family: novecento-sans-wide,sans-serif;
@@ -599,13 +929,7 @@ h3.venue {
         font-style: normal;
     }
 
-    h2.story {
-        /* transform: translate(0, 3em); */
-    }
-
-    p.story {
-        /* margin-top: 7em; */
-    }
+   
 
     h2.next {
         text-align: right;
@@ -617,21 +941,13 @@ h3.venue {
 @media (max-width: 767px) {
     .toggle-nav .site-id {
         position: absolute;
-        max-width: 150px;
+        max-width: 200px;
         }
 
     .toggle-nav .site-nav {
         text-align: right;
     }    
     
-    .toggle-nav .site-nav .menu-button {
-            display: block;
-            display: inline-block;
-            cursor: pointer;
-            padding: .3em .8em;
-            margin-bottom:  .8em;
-            border: 1px solid rgba(255, 255, 255, .8);
-        }
 
     .toggle-nav .site-nav .menu-button::selection {
         background-color: transparent;
@@ -639,40 +955,7 @@ h3.venue {
     
     .toggle-nav .site-nav ul {
             display: block;
-            text-align: center;
-        }
-        .toggle-nav .site-nav a:hover {
-            background-color: rgba(255, 255, 255, .8);
-            color: rgba(0, 0, 0, .8);
-            transition: 300ms ease;
-        }
-        .toggle-nav[data-navstate="closed"] ul {
-            height: 0;
-            overflow: hidden;
-        }
-        .toggle-nav[data-navstate="open"] ul {
-            height: auto;
-            overflow: visible;
-        }
-
-        /*  NAVICON */
-        .toggle-nav .site-nav .menu-button.navicon {
-            border: none;
-            padding: 0;
-            color: rgba(0, 0, 0, 0);
-        }
-
-        .toggle-nav .site-nav .menu-button.navicon::after {
-            content: "\2630";
-            display: inline-block;
-            padding: .2em 0;
-            margin: 0;
-            color: rgba(255, 255, 255, .8);
-            font-size: 1.5em;
-        }
-
-        .toggle-nav[data-navstate="open"] .site-nav .menu-button.navicon::after {
-            content: "\2715";
+            
         }
     }
 
@@ -812,7 +1095,7 @@ form input[type=submit]:hover {
 .site-header.sticky {
     position: fixed;
     width: 100%;
-    background-color: rgba(13,13,13,1)
+    background-color: rgba(13,13,13,1);
 
 }
 
